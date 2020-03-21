@@ -122,6 +122,13 @@ select {
     width: 80%;
     margin: 30px auto;
   }
+  #last-update p {
+    letter-spacing: 1px;
+    margin: -22px 20px 17px 20px;
+    font-size: 2.6vw;
+    font-weight: 400;
+    color: rgb(107, 107, 107);
+  }
 
   .statwrap h2 {
     font-size: 6.6vw;
