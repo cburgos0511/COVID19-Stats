@@ -117,7 +117,7 @@ select {
   h1 {
     font-size: 12vw;
   }
-  .container {
+  #flex {
     display: flex;
     flex-direction: column;
   }
