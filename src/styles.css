@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.App {
+  position: relative;
+  font-family: sans-serif;
+  text-align: center;
+  margin: auto;
+  height: 100vh;
+}
+
+.what {
+  position: absolute;
+  z-index: -10;
+  color: rgba(151, 151, 151, 0.062);
+  text-align: left;
+}
+.what h1 {
+  text-transform: uppercase;
+  letter-spacing: 30px;
+  font-size: 55vw;
+  font-weight: 800;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.nine {
+  font-size: 60vw !important;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-top: 1vw;
+}
+.wrapper {
+  width: 40%;
+  margin: 4vw auto;
+}
+
+.content {
+}
+
+#flex {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#last-update {
+  width: 100%;
+}
+
+#last-update p {
+  letter-spacing: 1px;
+  margin: 2px 20px 17px 20px;
+  font-size: 0.8vw;
+  font-weight: 400;
+  color: rgb(107, 107, 107);
+}
+.title {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 2vw;
+  color: rgba(43, 43, 43, 0.651);
+  font-size: 2.3vw;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+select {
+  width: 50%;
+  margin: auto;
+  border: 1px solid rgba(102, 102, 102, 0.438);
+  height: 2.2vw;
+  font-size: 1.2vw;
+}
+
+.select {
+  display: flex;
+  margin: 24px;
+}
+.select p {
+  margin: auto;
+  font-size: 1.2vw;
+  color: rgba(128, 128, 128, 0.4);
+}
+
+.statwrap {
+  margin: 2.3vw 1.3vw;
+  justify-content: space-between;
+  border: 1px solid rgb(248, 248, 248);
+  box-shadow: 2px 1px 5px #6666;
+  padding: 3vw;
+  transition: all 0.5s ease;
+}
+.statwrap:hover {
+  transform: scale(1.1);
+}
+
+.statwrap h2 {
+  letter-spacing: 1px;
+  margin: 17px 20px;
+  font-size: 0.8vw;
+  font-weight: 800;
+  color: rgb(107, 107, 107);
+  text-transform: uppercase;
+}
+.statwrap span {
+  margin: auto 0;
+  font-size: 2.6vw;
+}
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 12vw;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .wrapper {
+    width: 80%;
+    margin: 30px auto;
+  }
+
+  .statwrap h2 {
+    font-size: 6.6vw;
+  }
+  .statwrap span {
+    font-size: 5.5vw;
+  }
+  .select p {
+    font-size: 3.8vw;
+  }
+  .title {
+    font-size: 8.3vw;
+    margin-bottom: 10vw;
+  }
+}
