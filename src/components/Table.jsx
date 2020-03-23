@@ -17,7 +17,7 @@ export default function Table({ co }) {
           state={item.provinceState}
           active={item.active}
           confirmed={item.confirmed}
-          death={item.death}
+          death={item.deaths}
           recovered={item.recovered}
           country={item.countryRegion}
         />
