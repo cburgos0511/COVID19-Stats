@@ -9,7 +9,6 @@ export default function App() {
       <div className="what">
         <h1>COVID</h1>
       </div>
-
       <div className="container">
         <div className="wrapper">
           <h2 className="title">World Stats</h2>
