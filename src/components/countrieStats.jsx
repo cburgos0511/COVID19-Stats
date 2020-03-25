@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import useStats from "../utils/useStats";
 import Stats from "./Stats";
 import Table from "./Table";
+import Map from "./Map";
 
 export default function CountriesStats() {
   const [co, setCO] = useState("US");
@@ -9,20 +10,27 @@ export default function CountriesStats() {
     `https://covid19.mathdro.id/api/countries`
   );
 
+  const selectedCountry = id => {
+    setCO(id);
+  };
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error..</p>;
   if (countries.error) {
     return <p>Country was not found in Database</p>;
   } else {
-    const title = Object.keys(countries.countries).find(
-      key => countries.countries[key] === co
-    );
+    // console.log(countries.countries.map(a => a.iso2));
+    // const title = countries.countries.map(a => a.iso2);
+    // .find(key => countries.countries.map(a => a.iso2)[key] === co);
 
     return (
       <div>
+        <div className="map">
+          <Map selected={selectedCountry} country={co} />
+        </div>
         <div className="wrapper">
           <div>
-            <h2 className="title">{title} Stats</h2>
+            <h2 className="title">{co} Stats</h2>
             <div className="content">
               <Stats url={`https://covid19.mathdro.id/api/countries/${co}`} />
             </div>
@@ -31,8 +39,8 @@ export default function CountriesStats() {
               <select onChange={e => setCO(e.target.value)} value={co}>
                 {Object.entries(countries.countries).map(([country, code]) => {
                   return (
-                    <option key={country} value={code}>
-                      {country}
+                    <option key={code.name} value={code.iso2}>
+                      {code.name}
                     </option>
                   );
                 })}

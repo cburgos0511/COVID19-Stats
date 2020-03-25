@@ -11,13 +11,11 @@ export default function TableDetail({
   const name = state === null ? country : state;
   return (
     <>
-      <tr>
-        <td>{name}</td>
-        <td>{confirmed}</td>
-        <td>{recovered}</td>
-        <td>{death}</td>
-        <td>{active}</td>
-      </tr>
+      <td>{name}</td>
+      <td>{confirmed}</td>
+      <td>{recovered}</td>
+      <td>{death}</td>
+      <td>{active}</td>
     </>
   );
 }
