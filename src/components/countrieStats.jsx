@@ -39,7 +39,9 @@ export default function CountriesStats() {
               <select onChange={e => setCO(e.target.value)} value={co}>
                 {Object.entries(countries.countries).map(([country, code]) => {
                   return (
+
                     <option key={code.name} value={code.iso2}>
+
                       {code.name}
                     </option>
                   );
