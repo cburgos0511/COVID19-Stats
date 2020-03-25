@@ -11,11 +11,13 @@ export default function Table({ co }) {
   if (error) return <p>Error..</p>;
   else {
     const det = detail.map((item, i) => {
+      let cell =
+        item.admin2 === "Unassigned" ? item.provinceState : item.admin2;
       return (
         <tr key={i}>
           <TableDetail
             k={i}
-            state={item.provinceState}
+            state={cell}
             active={item.active}
             confirmed={item.confirmed}
             death={item.deaths}
