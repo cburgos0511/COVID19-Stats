@@ -12,15 +12,17 @@ export default function Table({ co }) {
   else {
     const det = detail.map((item, i) => {
       return (
-        <TableDetail
-          k={i}
-          state={item.provinceState}
-          active={item.active}
-          confirmed={item.confirmed}
-          death={item.deaths}
-          recovered={item.recovered}
-          country={item.countryRegion}
-        />
+        <tr key={i}>
+          <TableDetail
+            k={i}
+            state={item.provinceState}
+            active={item.active}
+            confirmed={item.confirmed}
+            death={item.deaths}
+            recovered={item.recovered}
+            country={item.countryRegion}
+          />
+        </tr>
       );
     });
     return (
