@@ -2,12 +2,17 @@ import React, { useState } from "react";
 import useStats from "../utils/useStats";
 import Stats from "./Stats";
 import Table from "./Table";
+import Map from "./Map";
 
 export default function CountriesStats() {
   const [co, setCO] = useState("US");
   const { stats: countries, loading, error } = useStats(
     `https://covid19.mathdro.id/api/countries`
   );
+
+  const selectedCountry = id => {
+    setCO(id);
+  };
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error..</p>;
@@ -20,6 +25,9 @@ export default function CountriesStats() {
 
     return (
       <div>
+        <div className="map">
+          <Map selected={selectedCountry} country={co} />
+        </div>
         <div className="wrapper">
           <div>
             <h2 className="title">{co} Stats</h2>
@@ -31,7 +39,9 @@ export default function CountriesStats() {
               <select onChange={e => setCO(e.target.value)} value={co}>
                 {Object.entries(countries.countries).map(([country, code]) => {
                   return (
-                    <option key={code.iso3} value={code.iso2}>
+
+                    <option key={code.name} value={code.iso2}>
+
                       {code.name}
                     </option>
                   );
